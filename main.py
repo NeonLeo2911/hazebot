@@ -3,6 +3,7 @@ from discord.ext import commands
 import datetime
 import os
 from dotenv import load_dotenv
+import webserver
 
 load_dotenv()
 
@@ -86,5 +87,5 @@ async def on_message(msg):
       bad_word_embed = discord.Embed(title = "Bad Word", description=f"{msg.author.mention}, please do not say any bad words", color = discord.Color.green())
       await msg.channel.send(embed=bad_word_embed, delete_after=5.0)
 
-
+webserver.keep_alive()
 client.run(TOKEN)
