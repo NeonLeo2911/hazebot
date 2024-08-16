@@ -2,17 +2,14 @@ import discord
 from discord.ext import commands
 import datetime
 import os
-from dotenv import load_dotenv
 import webserver
 
-load_dotenv()
 
 
 
 intents = discord.Intents.default()
 intents.message_content = True
-load_dotenv()
-TOKEN = os.getenv('DISCORD_TOKEN')
+TOKEN = os.environ.get('DISCORD_TOKEN')
 print(TOKEN)
 client = commands.Bot(command_prefix = 'h!', intents=intents)
 
